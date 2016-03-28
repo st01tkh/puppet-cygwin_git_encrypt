@@ -20,7 +20,7 @@ Puppet module to setup shadowhand/git-encrypt for CygWin
 
 ## Module Description
 
-apt-cyg for CygWin
+shadowhand/git-encrypt for CygWin
 
 ## Setup
 
