@@ -24,7 +24,7 @@ class cygwin_git_encrypt {
       if ($cygwinroot) {
           $sysroot = env("SYSTEMROOT")
           $sys32 = file_join_win(["${sysroot}", "System32"])
-	  $sysdrive = env("SYSTEMDRIVE")
+	      $sysdrive = env("SYSTEMDRIVE")
           $pfiles_dir = file_join_win(["${sysdrive}", "Program Files", ])
           $pfiles_x86_dir = file_join_win(["${sysdrive}", "Program Files (x86)", ])
           $gitroot = file_join_win(["${pfiles_dir}", "Git"])
@@ -43,7 +43,7 @@ class cygwin_git_encrypt {
           $cygwin_gitcrypt = file_join_win(["${cygwin_vendor}", "git-encrypt"])
           $cygwin_bin = file_join_win(["${cygwinroot}", "bin"])
           $cygwin_bash = file_join_win(["${cygwin_bin}", "bash.exe"])
-          file {"${cygwin_vendor}": ensure => 'directory' } ->
+          class {"cygwin_common::vendor": } ->
           file {"${cygwin_gitcrypt}": ensure => 'directory' } ->
           vcsrepo { "${cygwin_gitcrypt}":
             ensure   => present,
