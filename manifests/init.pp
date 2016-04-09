@@ -43,7 +43,6 @@ class cygwin_git_encrypt {
           $cygwin_gitcrypt = file_join_win(["${cygwin_vendor}", "git-encrypt"])
           $cygwin_bin = file_join_win(["${cygwinroot}", "bin"])
           $cygwin_bash = file_join_win(["${cygwin_bin}", "bash.exe"])
-          class {"cygwin_common": } ->
           file {"${cygwin_gitcrypt}": ensure => 'directory' } ->
           vcsrepo { "${cygwin_gitcrypt}":
             ensure   => present,
